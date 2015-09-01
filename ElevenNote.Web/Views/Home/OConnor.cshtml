@@ -1,9 +1,45 @@
 ﻿<h1>O'Connor</h1>
 @{
     var fizzbuzz = new List<String>();
-    
+   
+        for (var i = 1; i <= 100; i++)
+        {
+            if (i % 15 == 0) { fizzbuzz.Add("FizzBuzz"); }
+            else if (i % 3 == 0) { fizzbuzz.Add("Fizz"); }
+            else if (i % 5 == 0) { fizzbuzz.Add("Buzz"); }
+            else { fizzbuzz.Add(i.ToString()); }
+        }
 
-    
-    
-    
-}
+  }
+<select>
+     @foreach (var fb in fizzbuzz)
+            { 
+            <option value="@fb">@fb</option>
+            }
+        </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
