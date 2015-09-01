@@ -1,0 +1,11 @@
+﻿@{
+    var numberMinutes = 90; 
+}
+<h1>Paul</h1>
+Number of Minutes before seeing Sophie:
+<select name="theOption">
+    @for (var i = 0; i <= numberMinutes; i++)
+    {
+    <option value="@i">@i</option>
+    }
+</select>
