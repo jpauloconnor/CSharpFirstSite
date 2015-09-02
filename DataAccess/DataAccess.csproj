@@ -54,6 +54,19 @@
   <ItemGroup>
     <Compile Include="ElevenNoteApplicationUser.cs" />
     <Compile Include="ElevenNoteDataContext.cs" />
+    <Compile Include="Migrations\201509012325149_AddedNotesTable.cs" />
+    <Compile Include="Migrations\201509012325149_AddedNotesTable.Designer.cs">
+      <DependentUpon>201509012325149_AddedNotesTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509012356275_AddedATable.cs" />
+    <Compile Include="Migrations\201509012356275_AddedATable.Designer.cs">
+      <DependentUpon>201509012356275_AddedATable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509020008324_DroppedTempTable.cs" />
+    <Compile Include="Migrations\201509020008324_DroppedTempTable.Designer.cs">
+      <DependentUpon>201509020008324_DroppedTempTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -65,6 +78,17 @@
       <Project>{88d438b8-6f21-453d-b4b9-27db674c3a2f}</Project>
       <Name>ElevenNote.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509012325149_AddedNotesTable.resx">
+      <DependentUpon>201509012325149_AddedNotesTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509012356275_AddedATable.resx">
+      <DependentUpon>201509012356275_AddedATable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509020008324_DroppedTempTable.resx">
+      <DependentUpon>201509020008324_DroppedTempTable.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
