@@ -25,6 +25,7 @@ namespace ElevenNote.Services
                 note.Title = model.Title;
                 note.Contents = model.Contents;
                 note.DateCreated = DateTime.UtcNow;
+                note.IsFavorite = model.IsFavorite;
                 note.ApplicationUserId = userId;
 
                 context.Notes.Add(note);
@@ -45,6 +46,7 @@ namespace ElevenNote.Services
             {
                 var result = (from note in context.Notes
                               where note.ApplicationUserId == userId
+                              
                               select new NoteListViewModel()
                               {
                                   DateCreated = note.DateCreated.Value,
@@ -75,7 +77,8 @@ namespace ElevenNote.Services
                               {
                                   Contents = note.Contents,
                                   Id = note.Id,
-                                  Title = note.Title
+                                  Title = note.Title,
+                                  IsFavorite = note.IsFavorite
                               }).SingleOrDefault();
 
                 return result;
@@ -100,6 +103,7 @@ namespace ElevenNote.Services
                 // Update the note.
                 note.Contents = model.Contents;
                 note.Title = model.Title;
+                note.IsFavorite = model.IsFavorite;
                 note.DateModified = DateTime.UtcNow;
 
                 // Save the changes to the database.
@@ -150,10 +154,7 @@ namespace ElevenNote.Services
                 // Return the result.
                 return result == 1;
             }
-
-
         }
-
     }
 }
    

@@ -38,6 +38,7 @@ namespace ElevenNote.Web.Controllers
         }
 
         // POST: Note
+        [ValidateInput(false)]
         [HttpPost]
         [ActionName("Create")]
         public ActionResult CreatePost(NoteEditViewModel model)
@@ -63,7 +64,7 @@ namespace ElevenNote.Web.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             return View(noteService.GetById(id, userId));
         }
-
+        [ValidateInput(false)]
         [HttpPost]
         [ActionName("Edit")]
         public ActionResult EditPost(NoteEditViewModel model)
